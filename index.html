@@ -3,42 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Céu — Previsão do Tempo</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<title>Tempo</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500;1,600;1,700&family=Nunito:ital,wght@1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0f1e;
-    --bg2: #0f172a;
-    --card: rgba(255,255,255,0.04);
-    --card-border: rgba(255,255,255,0.08);
-    --text: #f0f4ff;
-    --text2: #7c8db5;
-    --accent: #4f8ef7;
-    --accent2: #7eb8f7;
-    --glow: rgba(79,142,247,0.15);
-    --shadow: rgba(0,0,0,0.4);
-    --chip: rgba(255,255,255,0.06);
-    --chip-border: rgba(255,255,255,0.1);
+    --bg: #1a0a2e;
+    --bg2: #2d1045;
+    --card: rgba(255,200,255,0.06);
+    --card-border: rgba(255,150,200,0.15);
+    --text: #fff5f0;
+    --text2: #e0a8cc;
+    --accent: #ff6eb4;
+    --accent2: #ff9de2;
+    --glow: rgba(255,110,180,0.2);
+    --shadow: rgba(80,0,60,0.4);
+    --chip: rgba(255,110,180,0.08);
+    --chip-border: rgba(255,110,180,0.18);
   }
   [data-theme="light"] {
-    --bg: #e8eef8;
-    --bg2: #dde6f4;
-    --card: rgba(255,255,255,0.7);
-    --card-border: rgba(100,140,200,0.2);
-    --text: #0f1b33;
-    --text2: #556080;
-    --accent: #2563eb;
-    --accent2: #3b82f6;
-    --glow: rgba(37,99,235,0.12);
-    --shadow: rgba(30,60,130,0.12);
-    --chip: rgba(37,99,235,0.08);
-    --chip-border: rgba(37,99,235,0.18);
+    --bg: #fff5e6;
+    --bg2: #ffe8cc;
+    --card: rgba(255,255,255,0.75);
+    --card-border: rgba(255,140,80,0.25);
+    --text: #3d1a00;
+    --text2: #b05a20;
+    --accent: #ff6b35;
+    --accent2: #ff9a5c;
+    --glow: rgba(255,107,53,0.18);
+    --shadow: rgba(200,80,0,0.12);
+    --chip: rgba(255,107,53,0.1);
+    --chip-border: rgba(255,107,53,0.22);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-style: italic;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
@@ -46,7 +47,6 @@
     overflow-x: hidden;
   }
 
-  /* Atmospheric background */
   body::before {
     content: '';
     position: fixed;
@@ -85,7 +85,6 @@
     padding: 2rem 1.5rem 4rem;
   }
 
-  /* Header */
   header {
     display: flex;
     justify-content: space-between;
@@ -94,7 +93,8 @@
   }
 
   .logo {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Lora', serif;
+    font-style: italic;
     font-size: 1.4rem;
     font-weight: 800;
     letter-spacing: -0.04em;
@@ -124,7 +124,6 @@
     transform: rotate(20deg) scale(1.1);
   }
 
-  /* Search */
   .search-wrap {
     display: flex;
     gap: 0.75rem;
@@ -136,7 +135,8 @@
     background: var(--card);
     border: 1px solid var(--card-border);
     color: var(--text);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-style: italic;
     font-size: 1rem;
     padding: 0.9rem 1.3rem;
     border-radius: 14px;
@@ -154,7 +154,8 @@
     background: var(--accent);
     border: none;
     color: #fff;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Lora', serif;
+    font-style: italic;
     font-weight: 600;
     font-size: 0.9rem;
     padding: 0.9rem 1.5rem;
@@ -170,7 +171,6 @@
   }
   .search-btn:active { transform: translateY(0); }
 
-  /* Error/Loading */
   .message {
     text-align: center;
     padding: 2rem;
@@ -179,7 +179,6 @@
   }
   .error { color: #f87171; }
 
-  /* Main Weather Card */
   .weather-main {
     background: var(--card);
     border: 1px solid var(--card-border);
@@ -206,7 +205,8 @@
   }
 
   .city-name {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Lora', serif;
+    font-style: italic;
     font-size: 2rem;
     font-weight: 800;
     letter-spacing: -0.04em;
@@ -247,7 +247,8 @@
 
   .temp-info {}
   .temp-main {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Lora', serif;
+    font-style: italic;
     font-size: 5.5rem;
     font-weight: 800;
     letter-spacing: -0.06em;
@@ -271,7 +272,6 @@
     margin-top: 0.1rem;
   }
 
-  /* Stats row */
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -290,7 +290,8 @@
   .stat-chip:hover { transform: translateY(-3px); }
   .stat-icon { font-size: 1.3rem; margin-bottom: 0.3rem; }
   .stat-value {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Lora', serif;
+    font-style: italic;
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -302,7 +303,6 @@
     font-weight: 300;
   }
 
-  /* Forecast */
   .forecast-section {
     display: none;
     animation: fadeUp 0.5s ease 0.1s both;
@@ -310,7 +310,8 @@
   .forecast-section.visible { display: block; }
 
   .section-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Lora', serif;
+    font-style: italic;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -318,13 +319,11 @@
     color: var(--text2);
     margin-bottom: 0.9rem;
   }
-
   .forecast-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0.8rem;
   }
-
   .forecast-card {
     background: var(--card);
     border: 1px solid var(--card-border);
@@ -341,7 +340,8 @@
     box-shadow: 0 8px 24px var(--glow);
   }
   .fc-day {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Lora', serif;
+    font-style: italic;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -354,7 +354,8 @@
     display: flex;
     justify-content: center;
     gap: 0.4rem;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Lora', serif;
+    font-style: italic;
     font-weight: 700;
     font-size: 0.9rem;
   }
@@ -377,8 +378,6 @@
     margin: 0 auto 1rem;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* Responsive */
   @media (max-width: 600px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .forecast-grid { grid-template-columns: repeat(3, 1fr); }
@@ -392,7 +391,7 @@
 
 <div class="container">
   <header>
-    <div class="logo">cé<span>u</span></div>
+    <div class="logo">tem<span>po</span></div>
     <button class="theme-btn" id="themeBtn" title="Alternar tema" aria-label="Alternar tema claro/escuro">🌙</button>
   </header>
 
@@ -456,11 +455,8 @@
 </div>
 
 <script>
-  // ===================== CONFIG =====================
-  const API_KEY = '4c24ae850e33c680fc7fab2efc024081'; // OpenWeatherMap API key
+  const API_KEY = '4c24ae850e33c680fc7fab2efc024081';
   const BASE = 'https://api.openweathermap.org/data/2.5';
-
-  // ===================== THEME =====================
   const html = document.documentElement;
   const themeBtn = document.getElementById('themeBtn');
   let isDark = true;
@@ -470,8 +466,6 @@
     html.setAttribute('data-theme', isDark ? 'dark' : 'light');
     themeBtn.textContent = isDark ? '🌙' : '☀️';
   });
-
-  // ===================== WEATHER ICONS =====================
   function getIcon(id, isDay = true) {
     if (id >= 200 && id < 300) return '⛈️';
     if (id >= 300 && id < 400) return '🌦️';
@@ -487,7 +481,6 @@
     return '🌡️';
   }
 
-  // ===================== FORMAT DATE =====================
   function formatDate(ts, tz) {
     const d = new Date((ts + tz) * 1000);
     return d.toUTCString().replace('GMT', '').trim().split(':').slice(0,2).join(':');
@@ -499,7 +492,6 @@
     return days[d.getDay()];
   }
 
-  // ===================== UI HELPERS =====================
   const $ = id => document.getElementById(id);
 
   function showLoader(v) { $('loader').classList.toggle('visible', v); }
@@ -512,7 +504,6 @@
     el.style.display = msg ? 'block' : 'none';
   }
 
-  // ===================== FETCH WEATHER =====================
   async function fetchWeather(city) {
     showLoader(true);
     showMain(false);
@@ -543,7 +534,6 @@
     }
   }
 
-  // ===================== RENDER CURRENT =====================
   function renderCurrent(d) {
     const isDay = d.dt > d.sys.sunrise && d.dt < d.sys.sunset;
     $('cityName').textContent = d.name;
@@ -559,9 +549,7 @@
     $('visibility').textContent = (d.visibility / 1000).toFixed(1) + ' km';
   }
 
-  // ===================== RENDER FORECAST =====================
   function renderForecast(data) {
-    // One entry per day (noon)
     const daily = {};
     data.list.forEach(item => {
       const date = item.dt_txt.split(' ')[0];
@@ -597,7 +585,6 @@
     });
   }
 
-  // ===================== EVENTS =====================
   $('searchBtn').addEventListener('click', () => {
     const city = $('cityInput').value.trim();
     if (city) fetchWeather(city);
@@ -610,7 +597,6 @@
     }
   });
 
-  // Auto-load user location on start
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async pos => {
       const { latitude: lat, longitude: lon } = pos.coords;
